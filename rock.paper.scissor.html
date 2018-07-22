@@ -94,42 +94,49 @@
                      {
                          ties ++;
                          console.log("test4");
+                         restart (event);
 
                      }
                      else if ((input === "r") && (computerGuess === "p"))
                      {
                          losses ++;   
                          console.log("test5");
+                         restart (event);
               
                      }
                      else if ((input === "p") && (computerGuess === "r"))
                      {
                          wins++;
                          console.log("test6");
+                         restart (event);
 
                      }
                      else if ((input === "p") && (computerGuess === "s"))
                      {
                         losses ++;    
                         console.log("test7");
+                        restart (event);
              
                      }
                      else if ((input === "s" && computerGuess === "p"))
                      {
                         wins++;
                         console.log("test8");
+                        restart (event);
 
                      }
                      else if ((input === "s" && computerGuess === "r"))
                      {
                         losses ++;   
                         console.log("test9");
+                        restart (event);
               
                      }
                      else if ((input === "r" && computerGuess === "s"))
                      {
                         wins++;
                         console.log("test10");
+                        restart (event);
                      }
 
                   var html =  
@@ -155,6 +162,7 @@
                     "<p>wins: " + wins + "</p>" +
                     "<p>losses: " + losses + "</p>" +
                     "<p>ties: " + ties + "</p>"; 
+                    restart (event);
                   } 
                   else
                   {
@@ -165,7 +173,8 @@
                     "<p>The computer chose: " + computerGuess + "</p>" +
                     "<p>wins: " + wins + "</p>" +
                     "<p>losses: " + losses + "</p>" +
-                    "<p>ties: " + ties + "</p>";     
+                    "<p>ties: " + ties + "</p>";  
+                     restart (event);   
                      console.log("test13");    
                      document.querySelector("#score").innerHTML = html;  
                      console.log("test14");  
@@ -178,10 +187,14 @@
             function restart (event)
             {
 
-                     var losses = 0; wins = 0; ties = 0; input=0;
-                     var computerGuess= 0; userChoice = 0; 
+                    //  var losses = 0; wins = 0; ties = 0; input=0;
+                    //  var computerGuess= 0; userChoice = 0; 
+                    //  document.querySelector("#game").innerHTML = html; 
+                computerGuess = choices[Math.floor (Math.random() * choices.length)];
+                console.log(computerGuess);
 
-                     document.querySelector("#game").innerHTML = html;                 
+                 var userChoice= document.getElementById("userInput").value;
+                 console.log(userChoice);               
 
             };
               
