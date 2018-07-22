@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href = "style.css"> 
+</head>
+
+<body>
+
+    <!-- <div id="game">
+            <h2> Enter your choice: </h2>  <input type="text" id="userInput" onkeyup="userinput(event)">                     
+    </div> -->
+
+
+
+         <div id="game" class="container">
+
+                <div class="jumbotron">
+                    <h1 class="text-center"><strong>Rock Paper Scissors</strong></h1>
+                    <!-- <h2> Enter your choice: </h2>  <input type="text" id="userInput" onkeyup="userinput(event)">                    -->
+
+                </div>
+                    
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+
+                          <div class="panel-body">
+                                <h3> Please introduce a valid option: Rock ('r'), Paper('p') or Scissors ('s') </h3> 
+                                <br> <br>
+                                <h2> Enter your choice: </h2>  <input type="text" id="userInput" onkeyup="userinput(event)">
+                                <br>  <br>
+                                <h2> Your choice is:  <span id="userChoice"> </span> </h2>   
+                                <br>  <br> 
+                                <div id = "score">
+                                    <p> Your results are until now: </p>
+                                    <br>  <br> 
+                                </div>
+                                <br>  <br>                 
+                          </div>                            
+                        </div>
+                    </div>
+                </div>
+                
+        </div>                     
+
+             <br> <br>
+             <button id="restart" class="btn btn-secondary" value="restart" onkeyup="restart(event)"> <h1> Start Over !!!!!!! </h1></button>
+
+             <br> <br>
+             <button id="start" class="btn btn-info"> <a href="index.html" target="_self"> <h1>Check the rules Again!!!!!!! </h1> </a> </button>
+
+        <script type="text/javascript">
+
+                var losses = 0; wins = 0; ties = 0;
+                var choices = ["r", "p", "s"];
+                var computerGuess= 0; userChoice = 0;        
+                
+
+                // document.onkeyup = function(event) {}
+                // var userGuess = event.key;
+        
+            function userinput(event)
+             {
+
+                 console.log("test1");
+
+                computerGuess = choices[Math.floor (Math.random() * choices.length)];
+                console.log(computerGuess);
+
+                 var userChoice= document.getElementById("userInput").value;
+                 console.log(userChoice);
+
+                //  var x = document.getElementById("fname").value;
+                 document.getElementById("userChoice").innerHTML = userChoice;
+                 console.log(userChoice);
+
+                //  var input = userChoice.value.toLowerCase();
+                var input = userChoice;
+                console.log(input);
+                console.log("test2");
+
+        
+                 if (input === "r" || input === "p" || input === "s") 
+                 {
+                    console.log("test3");
+
+                     if(input === computerGuess)
+                     {
+                         ties ++;
+                         console.log("test4");
+
+                     }
+                     else if ((input === "r") && (computerGuess === "p"))
+                     {
+                         losses ++;   
+                         console.log("test5");
+              
+                     }
+                     else if ((input === "p") && (computerGuess === "r"))
+                     {
+                         wins++;
+                         console.log("test6");
+
+                     }
+                     else if ((input === "p") && (computerGuess === "s"))
+                     {
+                        losses ++;    
+                        console.log("test7");
+             
+                     }
+                     else if ((input === "s" && computerGuess === "p"))
+                     {
+                        wins++;
+                        console.log("test8");
+
+                     }
+                     else if ((input === "s" && computerGuess === "r"))
+                     {
+                        losses ++;   
+                        console.log("test9");
+              
+                     }
+                     else if ((input === "r" && computerGuess === "s"))
+                     {
+                        wins++;
+                        console.log("test10");
+                     }
+
+                  var html =  
+                 "<p> Your results are until now: </p>" +             
+                  "<p>You chose: " + input + "</p>" +
+                  "<p>The computer chose: " + computerGuess + "</p>" +
+                  "<p>wins: " + wins + "</p>" +
+                  "<p>losses: " + losses + "</p>" +
+                  "<p>ties: " + ties + "</p>";     
+                  console.log("test13");    
+                  document.querySelector("#score").innerHTML = html;  
+                  console.log("test14");      
+                }
+
+                else
+                { 
+
+                  if(input === undefined || input===null)
+                  {
+                    "<p> Your results are until now: </p>" +             
+                    "<p>You chose: " + input + "</p>" +
+                    "<p>The computer chose: " + computerGuess + "</p>" +
+                    "<p>wins: " + wins + "</p>" +
+                    "<p>losses: " + losses + "</p>" +
+                    "<p>ties: " + ties + "</p>"; 
+                  } 
+                  else
+                  {
+                    var html =  
+                    "<h1> That letter is not a valid option, Please try again. </h1>" 
+                    "<p> Your results are until now: </p>" +             
+                    "<p>You chose: " + input + "</p>" +
+                    "<p>The computer chose: " + computerGuess + "</p>" +
+                    "<p>wins: " + wins + "</p>" +
+                    "<p>losses: " + losses + "</p>" +
+                    "<p>ties: " + ties + "</p>";     
+                     console.log("test13");    
+                     document.querySelector("#score").innerHTML = html;  
+                     console.log("test14");  
+                  }
+                }                   
+            };        
+            
+            
+
+            function restart (event)
+            {
+
+                     var losses = 0; wins = 0; ties = 0; input=0;
+                     var computerGuess= 0; userChoice = 0; 
+
+                     document.querySelector("#game").innerHTML = html;                 
+
+            };
+              
+        </script>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href = "style.css"> 
+</head>
+
+<body>
+
+        <div class="container">
+
+                <div class="jumbotron">
+                    <h1 class="text-center"><strong>Rock Paper Scissors Rules</strong></h1>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+
+                          <div id="main"  class="panel-body">
+                              <h3>1. User chooses r, p, or s on keyboard representing rock, paper, or scissors.</h3>
+                              <h3>2. Computer chooses a random value in a list of r, p, or s.</h3>
+                              <br> <br>
+                              <h3>3. We determine if the user wins or not.</h3> 
+                              <br>
+                              <ul>
+                                  <li><h4>If user picks rock and if computer picks scissors then user wins.</h4></li>
+                                  <li><h4>If user picks rock and if computer picks paper then user loses.</h4></li>
+                                  <li><h4>If user picks scissors and if computer picks rock then user loses.</h4></li>
+                                  <li><h4>If user picks scissors and if computer picks paper then user wins.</h4></li>
+                                  <li><h4>If user picks paper and if computer picks rock then user wins.</h4></li>
+                                  <li><h4>If user picks paper and if computer picks scissors then user loses.</h4></li>
+                                  <li><h4>If user picks the same as computer then they tie.</h4></li>
+                              </ul>
+                              <h3>4. We then add to their score.</h3>
+                              <br> 
+                                  <ul>
+                                      <li>
+                                          <h4>If user wins then we add one to their wins.</h4>
+                                      </li>
+                                      <li>
+                                          <h4>If user loses then we add one to their losses.</h4>
+                                      <li>
+                                          <h4>If user ties then we add one to their ties.</h4>
+                                      </li>
+                                  </ul>
+                              <h3>5. The user then presses r, p, or s to play again.</h3>
+                              <br>
+                            </div>
+
+                            <button id="start" class="btn btn-primary" value="Start"> <a href="rock.paper.scissor.html" target="_self"> <h1>Let's Start Playing!!!!!!! </h1> </a> </button>
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- <h1> Enter your choice: </h1>  <input type="text" id="userInput" onkeyup="userinput()">
+           <h2 id="warning"> Please introduce a valid option: Rock ('r'), Paper('p') or Scissors ('s') </h2>  -->
+
+
+    
+</body>
+</html>
